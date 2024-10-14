@@ -1,12 +1,6 @@
 from django.shortcuts import render
 
-# Create your views here.
-from .models import *
-from .serializers import *
-from rest_framework.response import Response
-from rest_framework.viewsets import ModelViewSet
-from rest_framework.decorators import *
-from utils import custom_viewsets
+
 
 
 
