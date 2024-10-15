@@ -24,16 +24,17 @@ class BankDetailSerializers(serializers.ModelSerializer):
 
 class SavingSerializers(serializers.ModelSerializer):
     class Meta:
-        model = Saving
+        model = Savings
         fields = '__all__'
 
-class LoanSerializers(serializers.ModelSerializer):
-    class Meta:
-        model = Loan
-        fields = '__all__'
 
 
 class FundDistributionSerializers(serializers.ModelSerializer):
     class Meta:
         model = FundDistribution
+        fields = '__all__'
+
+class MeetingSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Meeting
         fields = '__all__'

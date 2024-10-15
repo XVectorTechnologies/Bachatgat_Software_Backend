@@ -8,8 +8,7 @@ router.register("bachatgat",BachatGatRegistrationViewSet),
 router.register("member_registration",MemberRegistrationViewSet),
 router.register("bank_detail",BankDetailViewSet),
 router.register("users",UserDetailViewSet),
-router.register("saving_user",SavingViewSet),
-router.register("loan_",LoanViewSet),
+router.register("saving_user",SavingsViewSet),
 router.register("fund_distribution",FundDistributionViewSet),
 
 
