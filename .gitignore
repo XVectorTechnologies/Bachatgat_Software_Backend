@@ -1,0 +1,13 @@
+# Django-specific files
+*.log 
+*.pot
+
+**/__pycache__/
+*.pyc
+**/*.pyc
+migrations/
+
+*/BachatGatApp/__pycache__/
+
+mydatabase
+
