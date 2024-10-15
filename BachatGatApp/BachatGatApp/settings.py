@@ -38,10 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'BachatGat',
     'corsheaders',
     'rest_framework',
     'bootstrap5',
-    'BachatGat',
 ]
 
 MIDDLEWARE = [
