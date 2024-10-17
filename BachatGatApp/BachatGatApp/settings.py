@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'BachatGat',
     'corsheaders',
     'rest_framework',
-    'bootstrap5',
+    'bootstrap5'
 ]
 
 MIDDLEWARE = [
@@ -81,8 +81,12 @@ WSGI_APPLICATION = 'BachatGatApp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'mydatabase',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'BachatGatApp',        
+        'USER': 'postgres',         
+        'PASSWORD': '@kodane@215@',    
+        'HOST': '127.0.0.1',           
+        'PORT': '5432',                 
     }
 }
 

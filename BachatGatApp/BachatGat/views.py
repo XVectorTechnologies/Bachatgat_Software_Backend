@@ -1,7 +1,5 @@
 from django.shortcuts import render
 
-
-
 from .models import *
 from .serializers import *
 from rest_framework.response import Response
@@ -90,6 +88,19 @@ class SavingsViewSet(custom_viewsets.ModelViewSet):
     }
 
 
+class MeetingViewSet(custom_viewsets.ModelViewSet):
+    model = Meeting
+    queryset = Meeting.objects.all()
+    serializer_class = MeetingSerializers
+    create_success_message = 'created the data'
+    status_response = 200
+    status_code = 200
+    response = {
+        "status":200,
+        "msg": "successfully",
+        "data":{}
+    }
+
 class FundDistributionViewSet(custom_viewsets.ModelViewSet):
     model = FundDistribution
     queryset = FundDistribution.objects.all()
@@ -105,16 +116,31 @@ class FundDistributionViewSet(custom_viewsets.ModelViewSet):
     }
 
 
-class MeetingViewSet(custom_viewsets.ModelViewSet):
-    model = Meeting
-    queryset = Meeting.objects.all()
-    serializer_class = MeetingSerializers
-    list_success_message = 'meeting data of list success'
-    create_success_message = 'created the meeting data'
+
+class NotificationViewSet(custom_viewsets.ModelViewSet):
+    model = Notification
+    queryset = Notification.objects.all()
+    serializer_class = NotificationSerializers
+    list_success_message = 'Notification data of list success'
+    create_success_message = 'created the Notification data'
     satus_response = 200
     status_code = 200
     response = {
         "status": 200,
-        "msg": 'meeting data successfully',
+        "msg": 'Notification data successfully',
         "data": {}
+    }
+
+class MicroLendingRequestViewSet(custom_viewsets.ModelViewSet):
+    model = MicroLendingRequest
+    queryset = MicroLendingRequest.objects.all()
+    serializer_class = MicroLendingRequestSerializers
+    create_success_message = 'created the data success'
+    list_success_message = 'data in list'
+    status_response = 200
+    status_code = 200
+    response = {
+        "status":200,
+        "msg":"success",
+        "data":{}
     }

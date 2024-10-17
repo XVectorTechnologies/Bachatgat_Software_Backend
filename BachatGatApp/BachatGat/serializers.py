@@ -38,3 +38,14 @@ class MeetingSerializers(serializers.ModelSerializer):
     class Meta:
         model = Meeting
         fields = '__all__'
+
+
+class NotificationSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Notification
+        fields = '__all__'
+
+class MicroLendingRequestSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = MicroLendingRequest
+        fields = '__all__'
