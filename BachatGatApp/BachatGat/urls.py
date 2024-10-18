@@ -10,6 +10,10 @@ router.register("bank_detail",BankDetailViewSet),
 router.register("users",UserDetailViewSet),
 router.register("saving_user",SavingsViewSet),
 router.register("fund_distribution",FundDistributionViewSet),
+router.register("Notification",NotificationViewSet),
+router.register("MicroLendingRequest",MicroLendingRequestViewSet),
+
+
 
 
 urlpatterns = [

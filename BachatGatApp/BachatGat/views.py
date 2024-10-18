@@ -118,3 +118,35 @@ class MeetingViewSet(custom_viewsets.ModelViewSet):
         "msg": 'meeting data successfully',
         "data": {}
     }
+
+class NotificationViewSet(custom_viewsets.ModelViewSet):
+    model = Notification
+    queryset = Notification.objects.all()
+    serializer_class = NotificationSerializers
+    list_success_message = 'Notification data of list success'
+    create_success_message = 'created the Notification data'
+    satus_response = 200
+    status_code = 200
+    response = {
+        "status": 200,
+        "msg": 'Notification data successfully',
+        "data": {}
+    }
+
+
+class MicroLendingRequestViewSet(custom_viewsets.ModelViewSet):
+    model = MicroLendingRequest
+    queryset = MicroLendingRequest.objects.all()
+    serializer_class = MicroLendingRequestSerializers
+    list_success_message = 'MicroLendingRequest data of list success'
+    create_success_message = 'created the MicroLendingRequest data'
+    satus_response = 200
+    status_code = 200
+    response = {
+        "status": 200,
+        "msg": 'MicroLendingRequest data successfully',
+        "data": {}
+    }
+
+
+    

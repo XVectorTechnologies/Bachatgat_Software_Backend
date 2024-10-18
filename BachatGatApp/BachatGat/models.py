@@ -97,3 +97,22 @@ class Meeting(MyBaseModel):
     end_date = models.DateField(auto_now_add=True)
     agenda = models.TextField(blank=True, null=True)
 
+class Notification(MyBaseModel):
+    pid = models.UUIDField(default=uuid.uuid4,editable=False)
+    user_id = models.ForeignKey(UserDetail, on_delete=models.CASCADE)
+    message = models.TextField(blank=True, null=True)
+    notification_type = models.CharField(max_length=255)
+    date_sent= models.DateField(auto_now_add=True)
+
+class MicroLendingRequest(models.Model):
+    pid = models.UUIDField(default=uuid.uuid4, editable=False)
+    member_id = models.ForeignKey(MemberRegistration,on_delete=models.CASCADE)
+    loan_amount = models.DecimalField(max_digits=10, decimal_places=2)
+    interest_rate = models.DecimalField(max_digits=5, decimal_places=2)
+    status = models.CharField(max_length=20)
+    request_at = models.TimeField()
+    approved_at = models.TimeField(auto_now_add=True)
+    repayment_term= models.IntegerField()
+    repayment_start_date = models.DateField(auto_now_add=True)
+    repayment_end_date = models.DateField(auto_now_add=True)
+    notes = models.TextField(blank=True, null=True)
