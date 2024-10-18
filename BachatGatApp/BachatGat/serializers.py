@@ -49,3 +49,18 @@ class MicroLendingRequestSerializers(serializers.ModelSerializer):
     class Meta:
         model = MicroLendingRequest
         fields = '__all__'
+
+class UserEmailSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = UserEmail
+        fields = '__all__'
+
+class SupportTicketSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = SupportTicket
+        fields = '__all__'
+
+class PaymentSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Payment
+        fields = '__all__'

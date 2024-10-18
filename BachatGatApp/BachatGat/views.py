@@ -144,3 +144,43 @@ class MicroLendingRequestViewSet(custom_viewsets.ModelViewSet):
         "msg":"success",
         "data":{}
     }
+
+class UserEmailViewSet(custom_viewsets.ModelViewSet):
+    model = UserEmail
+    queryset = UserEmail.objects.all()
+    serializer_class =UserEmailSerializers
+    create_success_message = 'created  the useremail data'
+    status_response = 200
+    status_code = 200
+    response = {
+        "status":200,
+        "msg": 'email view data featch ',
+        "data":{}
+    }
+
+class SupportTicketViewSet(custom_viewsets.ModelViewSet):
+    model = SupportTicket
+    queryset = SupportTicket.objects.all()
+    serializer_class = SupportTicketSerializers
+    create_success_message = "creted the data"
+    status_response = 200
+    status_code = 200
+    response = {
+        "status":True,
+        "msg":"view data featch",
+        "data":{}
+    }
+    
+class PaymentViewSet(custom_viewsets.ModelViewSet):
+    model = Payment
+    queryset = Payment.objects.all()
+    serializer_class = PaymentSerializers
+    create_success_message ="created the data"
+    list_success_message = 'list the data success'
+    status_respoonse = 200
+    status_code = 200
+    response = {
+        "status": True,
+        "msg":'view data featch',
+        "data":{}
+    }

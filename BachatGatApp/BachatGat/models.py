@@ -115,3 +115,39 @@ class MicroLendingRequest(MyBaseModel):
     repayment_term = models.IntegerField()
     repayment_start_date = models.DateField(auto_now_add=True)
     repayment_end_date = models.DateField(auto_now_add=True)
+
+class UserEmail(MyBaseModel):
+    pid = models.UUIDField(default=uuid.uuid4,editable=False)
+    from_email = models.CharField(max_length=255)
+    to_email = models.JSONField()
+    cc = models.JSONField(null=True, blank=True)  
+    bcc = models.JSONField(null=True, blank=True) 
+    subject = models.CharField(max_length=255)
+    body = models.TextField(blank=True, null=True)
+    attachemants = models.JSONField(null=True, blank=True)
+    replay_to = models.CharField(max_length=255)
+    is_html = models.BooleanField(default=False)
+
+class SupportTicket(MyBaseModel):
+    pid = models.UUIDField(default=uuid.uuid4, editable=False)
+    ticket_type = models.CharField(max_length=50)
+    priority = models.CharField(max_length=20, default=False)
+    subject = models.CharField(max_length=255)
+    description = models.TextField(blank=True, null=True)
+    status = models.CharField(max_length=20)
+    response = models.TextField(blank=True, null=True)
+
+class Payment(MyBaseModel):
+    CURRENCY_CHOICES = [
+        ('USD', 'US Dollar'),
+        ('EUR', 'Euro'),
+        ('INR', 'Indian Rupee'),
+    ]
+    pid = models.UUIDField(default=uuid.uuid4,editable=False)
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    currency = models.CharField(max_length=10,choices=CURRENCY_CHOICES,default='USD')
+    payment_method = models.CharField(max_length=50)
+    status = models.CharField(max_length=20)
+    transaction_id = models.CharField(max_length=255)
+    payment_geteway = models.CharField(max_length=50)
+    payment_date = models.DateTimeField(auto_now_add=True)
