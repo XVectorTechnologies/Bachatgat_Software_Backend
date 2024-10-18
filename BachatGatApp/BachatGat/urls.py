@@ -13,6 +13,9 @@ router.register("fund_distribution",FundDistributionViewSet),
 router.register("meeting_",MeetingViewSet)
 router.register("notification",NotificationViewSet),
 router.register("micro_lending",MicroLendingRequestViewSet),
+router.register("email_",UserEmailViewSet),
+router.register("support_ticket",SupportTicketViewSet),
+router.register("payment_",PaymentViewSet),
 
 
 
